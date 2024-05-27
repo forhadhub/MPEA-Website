@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <title>Bangladesh Motion Pictures Exebutors Association</title>
+    <title>Bangladesh Motion Picture Exhibitors Association</title>
 
     <!-- custom tailwindCSS -->
     <script>
@@ -20,10 +20,14 @@
         theme: {
           extend: {
             colors: {
-              clifford: '#da373d',
+              clifford:'#da373d',
+              'pblack':'#0c0306',
+              'pfont':'#d6d2c7',
+              'pred':'#EF0000',
+              'pyellow':'#ffb600',
             },
-            fontFamily{
-              'poppins': ['Poppins', 'sans-serif'],
+            fontFamily:{
+              'font-poppins': ['Poppins', 'sans-serif'],
             }
           }
         }
@@ -39,16 +43,65 @@
       background-position: center;
       background-attachment: fixed;
     }
+    
     </style>
 </head>
 
 
-<body class="max-w-[1366px] mx-auto bg_image poppins">
-    <header>
-      <div class="h-96">
-
+<body class="max-w-[1366px] mx-auto bg_image font-poppins h-96">
+    <header class="flex justify-between bg-pblack text-pfont p-4 border-b-2 border-pfont">
+      <div>
+        <h3>Bangladesh Motion Picture Exhibitors Association</h3>
+      </div>
+      <div>
+        <ul class="flex">
+          <li class="list-none pl-4">Contact us</li>
+          <li class="list-none pl-4">Registration</li>
+        </ul>
       </div>
     </header>
+
+    <nav>
+      <div class="navbar bg-base-100">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+      </div>
+      <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+        <li><a>Item 1</a></li>
+        <li>
+          <a>Parent</a>
+          <ul class="p-2">
+            <li><a>Submenu 1</a></li>
+            <li><a>Submenu 2</a></li>
+          </ul>
+        </li>
+        <li><a>Item 3</a></li>
+      </ul>
+    </div>
+    <a class="btn btn-ghost text-xl">daisyUI</a>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1">
+      <li><a>Item 1</a></li>
+      <li>
+        <details>
+          <summary>Parent</summary>
+          <ul class="p-2">
+            <li><a>Submenu 1</a></li>
+            <li><a>Submenu 2</a></li>
+          </ul>
+        </details>
+      </li>
+      <li><a>Item 3</a></li>
+    </ul>
+  </div>
+  <div class="navbar-end">
+    <a class="btn">Button</a>
+  </div>
+</div>
+    </nav>
 
     <main>
 
