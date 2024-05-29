@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth focus:scroll-auto">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +14,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- google font: tiro bangla -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
     <title>Bangladesh Motion Picture Exhibitors Association</title>
 
     <!-- custom tailwindCSS -->
@@ -30,6 +35,7 @@
             },
             fontFamily:{
               'poppins': ['Poppins', 'sans-serif'],
+              'tiro-bangla':['Tiro Bangla', 'serif'],
             },
           }
         }
@@ -50,7 +56,25 @@
             height: 2.5rem; 
             background: linear-gradient(to right, rgba(255, 255, 255, 0.18), white);
         }
-    </style>
+    .p-button {
+      font-family: 'Tiro Bangla', serif;
+      color: #EF0000;
+      background-color: #d6d2c7;
+      border: 1px solid #EF0000;
+      border-radius: 0.75rem; 
+      font-size: 1rem; 
+      padding: 5px 8px 5px 8px;
+      font-weight: 500;
+      transition: background-color 1s ease;
+    }
+    .p-button:hover {
+      background-color: #EF0000;
+      color: #0c0306;
+      font-weight: 600;
+      border: 1px solid #0c0306;
+      box-shadow: -webkit-box-shadow: 0px 0px 25px 0px rgba(239,0,0,0.95); -moz-box-shadow: 0px 0px 25px 0px rgba(239,0,0,0.95); box-shadow: 0px 0px 25px 0px rgba(239,0,0,0.95);
+    }
+
     </style>
 </head>
 
@@ -111,7 +135,7 @@
           </div>
           <div class="navbar-end flex gap-4">
             <div>
-              <a class="btn rounded-full px-8 border-0 bg-gradient-to-r from-pred via-pyellow to-pred min-h-8 max-h-8 hover:shadow-lg hover:shadow-pred hover:text-base hover:text-pfont" href="registration.html"><i class="fa-solid fa-people-group"></i> Join us</a>
+              <a class="skeleton btn rounded-full px-8 border-0 bg-gradient-to-r from-pred via-pyellow to-pred min-h-8 max-h-8 hover:shadow-lg hover:shadow-pred hover:text-base hover:text-pfont" href="registration.html"><i class="fa-solid fa-people-group"></i> Join us</a>
             </div>
             <div>
               <a class="btn rounded-full px-8 border-0 bg-gradient-to-r from-pred via-pyellow to-pred min-h-8 max-h-8 hover:shadow-lg hover:shadow-pred hover:text-base hover:text-pfont" href="registration.html"><i class="fa-solid fa-box"></i> Login</a>
@@ -147,7 +171,33 @@
       </div>  -->
     </div>
     <!-- banner section end -->
+    <div class="px-8">
+      <!-- press release and event section start -->
+      <div class="card" style="background-color: rgba(214, 210, 199, 0.6);">
+        <h1 class="pt-4 pb-4 text-xl text-center font-semibold text-pblack underline underline-offset-4 hover:text-pred"><a href="pressrelease.html">Press Release</a></h1>
+        <figure><img class="border-t-4 border-b-4 border-pblack" src="./src/images/press_img.jpg" alt="press release image"/></figure>
+        <div class="card-body p-4 items-center">
+          <h2 class="card-title text-pyellow font-tiro-bangla text-center text-2xl"><a href="#">প্রদর্শক সমিতি হতাশ, সিনেমা হল বন্ধ করে দেওয়ার আল্টিমেটাম</a></h2>
+          <p class="text-justify font-tiro-bangla text-lg">বাংলাদেশে শাহরুখ খানের ‘পাঠান’ মুক্তি নিয়ে নানা নাটকীয়তা তৈরি হয়েছে। দেশে মুক্তির সবুজ সংকেত পেয়ে হলগুলোও সেভাবেই প্রস্তুতি নিয়ে রেখেছিলো। শুধু তাই নয়, বলিউড সুপারস্টার শাহরুখ খান নিজেও টুইটে বাংলাদেশে ‘পাঠান’ মুক্তির খবর জানিয়েছিলেন!</p>
+          <div>
+            <button class="p-button">
+              আরও জানুন  <i class="fa-solid fa-hand-point-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- press release and event section start -->
+        <div>
 
+        </div>
+
+    </div>
+
+
+
+
+    <!-- press release and event section end -->
 
 
   </main>
