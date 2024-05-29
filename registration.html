@@ -3,9 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Member Registration</title>
-</head>
-<body>
     
+    <!-- External css -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/e8f84a7605.js" crossorigin="anonymous"></script>
+   
+    <!-- google font: poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Bangladesh Motion Picture Exhibitors Association</title>
+
+    <!-- custom tailwindCSS -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford:'#da373d',
+              'pblack':'#0c0306',
+              'pfont':'#d6d2c7',
+              'pred':'#EF0000',
+              'pyellow':'#ffb600',
+            },
+            fontFamily:{
+              'poppins': ['Poppins', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+
+    <!-- custom styles -->
+    <style>
+    .bg_image {
+      background-image: url(./src/images/bg.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .custom-box {
+            width: 7.5rem; 
+            height: 2.5rem; 
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.18), white);
+        }
+    </style>
+    </style>
+</head>
+
+<body class="max-w-[1366px] mx-auto bg_image font-poppins">
+  <header class="sticky top-0 z-[9999]">
+    <!-- top header section-->
+    <div class="flex justify-center flex-col md:justify-between lg:justify-between md:flex-row lg:flex-row bg-pblack text-pfont px-8 py-2 border-b-2 border-pfont">
+      <div class="flex justify-center text-sm text-center lg:text-left md:text-left">
+        <h3>Welcome to Bangladesh Motion Picture Exhibitors Association (BMPEA)</h3>
+      </div>
+      <div>
+        <ul class="flex justify-center text-sm">
+          <li class="list-none pl-4 hover:text-pred hover:font-semibold hover:scale-110 duration-300"><a href="contactus.html">Contact us</a></li>
+          <li class="list-none pl-4 hover:text-pred hover:font-semibold hover:scale-110 duration-300"><a href="registration.html">Registration</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- navbar section-->
+    <nav>
+      <div class="mt-3 py-0 px-8 font-poppins text-pfont font-medium text-base border-b-2 border-t-2 border-pred shadow-lg shadow-white/40 navbar bg-pblack bg-opacity-55">
+        <div class="navbar-start">
+          <!-- mobile menu -->
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+            </div>
+            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 bg-base-100 rounded-box w-52 bg-pblack bg-opacity-55 border-r-2 border-pred shadow-lg shadow-white/40">
+              <li><a href="index.html" class="box w-30 h-10 bg-gradient-to-r from-[rgba(255, 255, 255, 0.18)] to-white hover:text-pb hover:from-pred hover:to-pyellow rounded-lg hover:text-pblack hover:translate-y-1 hover:duration-[1s]">Home</a></li>
+                <li><a href="aboutus.html" class="box w-30 h-10 bg-gradient-to-r from-[rgba(255, 255, 255, 0.18)] to-white hover:text-pb hover:from-pred hover:to-pyellow rounded-lg hover:text-pblack hover:translate-y-1 hover:duration-[1s]">About us</a></li>
+                <li><a href="committeelist.html" class="box w-30 h-10 bg-gradient-to-r from-[rgba(255, 255, 255, 0.18)] to-white hover:text-pb hover:from-pred hover:to-pyellow rounded-lg hover:text-pblack hover:translate-y-1 hover:duration-[1s]">Committee</a></li>
+                <li><a href="memberlist.html" class="box w-30 h-10 bg-gradient-to-r from-[rgba(255, 255, 255, 0.18)] to-white hover:text-pb hover:from-pred hover:to-pyellow rounded-lg hover:text-pblack hover:translate-y-1 hover:duration-[1s]">Members</a></li>
+                <li><a href="directorlist.html" class="box w-30 h-10 bg-gradient-to-r from-[rgba(255, 255, 255, 0.18)] to-white hover:text-pb hover:from-pred hover:to-pyellow rounded-lg hover:text-pblack hover:translate-y-1 hover:duration-[1s]">Director</a></li>
+                <li><a href="pressrelease.html" class="box w-30 h-10 bg-gradient-to-r from-[rgba(255, 255, 255, 0.18)] to-white hover:text-pb hover:from-pred hover:to-pyellow rounded-lg hover:text-pblack hover:translate-y-1 hover:duration-[1s]">Press</a></li>
+                <li><a href="media.html" class="box w-30 h-10 bg-gradient-to-r from-[rgba(255, 255, 255, 0.18)] to-white hover:text-pb hover:from-pred hover:to-pyellow rounded-lg hover:text-pblack hover:translate-y-1 hover:duration-[1s]">Media</a></li>
+                <li><a href="events.html" class="box w-30 h-10 bg-gradient-to-r from-[rgba(255, 255, 255, 0.18)] to-white hover:text-pb hover:from-pred hover:to-pyellow rounded-lg hover:text-pblack hover:translate-y-1 hover:duration-[1s]">Events</a></li>
+            </ul>
+          </div>
+        <!-- site logo -->
+        <div class="overflow-visible h-16">
+          <a href="#">
+            <img class="max-w-28 lg:max-w-40 md:min-w-36 relative top-12 -translate-y-[60%] md:-translate-y-[54%] lg:-translate-y-[54%]" src="./src/images/Logo_shadow.png" alt="BMPEA">
+          </a>
+          </div>  
+          </div>
+        <!-- large display menu -->
+        <div class="navbar-center hidden lg:flex font-poppins ">
+          <ul class="menu menu-horizontal px-1 ">
+            <li><a href="#" class="box w-30 h-10 bg-gradient-to-r from-[rgba(255, 255, 255, 0.18)] to-white hover:text-pb hover:from-pred hover:to-pyellow rounded-lg hover:text-pblack hover:translate-y-1 hover:duration-[1s]">Home</a></li>
+              <li><a href="aboutus.html" class="box w-30 h-10 bg-gradient-to-r from-[rgba(255, 255, 255, 0.18)] to-white hover:text-pb hover:from-pred hover:to-pyellow rounded-lg hover:text-pblack hover:translate-y-1 hover:duration-[1s]">About us</a></li>
+              <li><a href="committeelist.html" class="box w-30 h-10 bg-gradient-to-r from-[rgba(255, 255, 255, 0.18)] to-white hover:text-pb hover:from-pred hover:to-pyellow rounded-lg hover:text-pblack hover:translate-y-1 hover:duration-[1s]">Committee</a></li>
+              <li><a href="memberlist.html" class="box w-30 h-10 bg-gradient-to-r from-[rgba(255, 255, 255, 0.18)] to-white hover:text-pb hover:from-pred hover:to-pyellow rounded-lg hover:text-pblack hover:translate-y-1 hover:duration-[1s]">Members</a></li>
+              <li><a href="directorlist.html" class="box w-30 h-10 bg-gradient-to-r from-[rgba(255, 255, 255, 0.18)] to-white hover:text-pb hover:from-pred hover:to-pyellow rounded-lg hover:text-pblack hover:translate-y-1 hover:duration-[1s]">Director</a></li>
+              <li><a href="pressrelease.html" class="box w-30 h-10 bg-gradient-to-r from-[rgba(255, 255, 255, 0.18)] to-white hover:text-pb hover:from-pred hover:to-pyellow rounded-lg hover:text-pblack hover:translate-y-1 hover:duration-[1s]">Press</a></li>
+              <li><a href="media.html" class="box w-30 h-10 bg-gradient-to-r from-[rgba(255, 255, 255, 0.18)] to-white hover:text-pb hover:from-pred hover:to-pyellow rounded-lg hover:text-pblack hover:translate-y-1 hover:duration-[1s]">Media</a></li>
+              <li><a href="events.html" class="box w-30 h-10 bg-gradient-to-r from-[rgba(255, 255, 255, 0.18)] to-white hover:text-pb hover:from-pred hover:to-pyellow rounded-lg hover:text-pblack hover:translate-y-1 hover:duration-[1s]">Events</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end flex gap-4">
+          <div>
+            <a class="btn rounded-full px-8 border-0 bg-gradient-to-r from-pred via-pyellow to-pred min-h-8 max-h-8 hover:shadow-lg hover:shadow-pred hover:text-base hover:text-pfont" href="registration.html"><i class="fa-solid fa-people-group"></i> Join us</a>
+          </div>
+          <div>
+            <a class="btn rounded-full px-8 border-0 bg-gradient-to-r from-pred via-pyellow to-pred min-h-8 max-h-8 hover:shadow-lg hover:shadow-pred hover:text-base hover:text-pfont" href="registration.html"><i class="fa-solid fa-box"></i> Login</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- breadcrumbs -->
+    <div class="text-sm text-pfont breadcrumbs mt-8 px-8">
+        <ul>
+          <li><a><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-4 h-4 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+              Home
+            </a></li> 
+          <li><a><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-4 h-4 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+              registration</a></li> 
+        </ul>
+    </div>
+    <div class="-mt-24">
+        <img src="./src/images/back_soon.png" alt="we will back soon">
+    </div>
+
+</main>
+
+  <footer class="border-t-4 border-pfont mt-10 bg-gradient-to-r from-pblack via-pred to-pblack opacity-80">
+  <!-- footer section start -->
+    <div class="grid grid-cols-1 lg:grid-cols-4 px-8 py-5 text-pfont font-medium justify-between items-center">
+      <!-- site logo -->
+      <div class="w-60 hidden lg:block">
+        <a href="#">
+          <img src="./src/images/Logo_shadow.png" alt="BMPEA">
+        </a>
+      </div>
+      <!-- link -->
+      <div class=" justify-center text-center col-span-2">
+          <ul>
+            <li class="link link-hover"><a href="aboutus.html">About us</a></li>
+            <li class="link link-hover"><a href="committeelist.html">Committee</a></li>
+            <li class="link link-hover"><a href="pressrelease.html">Press Release</a></li>
+            <li class="link link-hover"><a href="privacyandadvocacy.html">Privacy & Advocacy</a></li>
+            <li class="link link-hover"><a href="contactus.html">Contact us</a></li>
+          </ul>
+      </div>
+      <!-- social icon -->
+      <div class="justify-center text-center">
+        <div>
+          <h3 class="underline underline-offset-4 text-center lg:text-right">Follow us on</h3>
+        </div>
+        <div class=" text-3xl gap-5 flex mt-4 justify-center text-center lg:justify-end ">
+          <a href="#" class="fa fa-facebook hover:-translate-y-1 hover:scale-110 hover:shadow-lg hover:shadow-pfont hover:rounded-lg duration-300 hover:text-pred"></a>
+          <a href="#" class="fa fa-instagram hover:-translate-y-1 hover:scale-110 hover:shadow-lg hover:shadow-pfont hover:rounded-lg duration-300 hover:text-pred"></a>
+          <a href="#" class="fa fa-youtube hover:-translate-y-1 hover:scale-110 hover:shadow-lg hover:shadow-pfont hover:rounded-lg duration-300 hover:text-pred"></a>
+          <a href="#" class="fa fa-pinterest hover:-translate-y-1 hover:scale-110 hover:shadow-lg hover:shadow-pfont hover:rounded-lg duration-300 hover:text-pred"></a>
+          <a href="#" class="fa fa-google hover:-translate-y-1 hover:scale-110 hover:shadow-lg hover:shadow-pfont hover:rounded-lg duration-300 hover:text-pred"></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- details section end -->
+    <div class="text-pfont flex justify-between px-8 py-4 border-t-2 border-pfont text-sm">
+      <div>
+        <h3>Copyright&copy;All Rights Reserved by <a href="#" class="link link-hover">BMPEA</a></h3>
+      </div>
+      <div>
+        <h3>Developed by:  <a href="www.codecursor.com" class="hover:text-pred hover:font-semibold hover:scale-110 duration-300 hover:text-base">Code Cursor</a></h3>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
