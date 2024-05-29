@@ -47,9 +47,10 @@
     </style>
 </head>
 
-
-<body class="max-w-[1366px] mx-auto bg_image font-poppins h-screen">
-    <header class="flex justify-center flex-col md:justify-between lg:justify-between md:flex-row lg:flex-row bg-pblack text-pfont px-8 py-2 border-b-2 border-pfont">
+<body class="max-w-[1366px] mx-auto bg_image font-poppins">
+  <header class="sticky top-0 z-[9999]">
+    <!-- top header section-->
+    <div class="flex justify-center flex-col md:justify-between lg:justify-between md:flex-row lg:flex-row bg-pblack text-pfont px-8 py-2 border-b-2 border-pfont">
       <div class="flex justify-center text-sm text-center lg:text-left md:text-left">
         <h3>Welcome to Bangladesh Motion Picture Exhibitors Association (BMPEA)</h3>
       </div>
@@ -59,8 +60,9 @@
           <li class="list-none pl-4"><a href="registration.html">Registration</a></li>
         </ul>
       </div>
-    </header>
+    </div>
 
+    <!-- navbar section-->
     <nav>
       <div class="mt-3 py-0 px-8 font-poppins text-pfont font-medium text-base border-b-2 border-t-2 border-pred shadow-lg shadow-white/40 navbar bg-pblack bg-opacity-55">
         <div class="navbar-start">
@@ -101,13 +103,87 @@
         </div>
       </div>
     </nav>
+  </header>
 
-    <main>
+  <main>
+    <!-- banner section start -->
+    <div class="mt-10 carousel w-cover">
+      <div id="slide1" class="carousel-item relative w-full h-2/3">
+        <img src="./src/images/SBG1.jpg" class="w-full" />
+        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide4" class="btn btn-circle">❮</a> 
+          <a href="#slide2" class="btn btn-circle">❯</a>
+        </div>
+      </div> 
+      <div id="slide2" class="carousel-item relative w-full h-2/3">
+        <img src="./src/images/SBG2.jpg" class="w-full" />
+        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide1" class="btn btn-circle">❮</a> 
+          <a href="#slide3" class="btn btn-circle">❯</a>
+        </div>
+      </div> 
+      <div id="slide3" class="carousel-item relative w-full">
+        <img src="./src/images/SBG3.jpg" class="w-full" />
+        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide2" class="btn btn-circle">❮</a> 
+          <a href="#slide4" class="btn btn-circle">❯</a>
+        </div>
+      </div> 
+    </div>
+    <!-- banner section end -->
 
-    </main>
 
-    <footer>
 
-    </footer>
+  </main>
+
+  <footer class="border-t-4 border-pfont mt-10 bg-gradient-to-r from-pblack via-pred to-pblack opacity-80">
+  <!-- footer section start -->
+    <div class="grid grid-cols-1 lg:grid-cols-4 px-8 py-5 text-pfont font-medium justify-between items-center">
+      <div class="w-60 hidden lg:block">
+        <a href="#">
+          <img src="./src/images/Logo_shadow.png" alt="BMPEA">
+        </a>
+      </div>
+
+      <div class=" justify-center text-center col-span-2">
+          <ul>
+            <li class="link link-hover"><a href="aboutus.html">About us</a></li>
+            <li class="link link-hover"><a href="committeelist.html">Committee</a></li>
+            <li class="link link-hover"><a href="pressrelease.html">Press Release</a></li>
+            <li class="link link-hover"><a href="contactus.html">Contact us</a></li>
+          </ul>
+      </div>
+
+      <div class="justify-center text-center">
+        <div>
+          <h3 class="border-b-2 border-pfont text-center lg:text-right">Follow us on</h3>
+        </div>
+        <div class="flex mt-4 justify-center text-center lg:justify-end">
+          <a href="https://www.facebook.com/" target="_blank">
+            <img class="w-11 ml-6 hover:w-16 hover:-translate-y-1 hover:scale-90 hover:shadow-md hover:shadow-pfont duration-300" src="./src/icon/facebook.svg" alt="p_icon">
+          </a>
+          <a href="https://www.instagram.com/" target="_blank">
+            <img class="w-10 ml-6 hover:w-14 hover:-translate-y-1 hover:scale-90 hover:shadow-md hover:shadow-pfont  duration-300" src="./src/icon/instagram.svg" alt="p_icon">
+          </a>
+          <a href="https://www.youtube.com/" target="_blank">
+            <img class="w-14 ml-6 hover:w-20 hover:-translate-y-1 hover:scale-90 hover:shadow-md hover:shadow-pfont  duration-300" src="./src/icon/youtube1.svg" alt="p_icon">
+          </a>
+          <a href="https://www.twitter.com/" target="_blank">
+            <img class="w-11 ml-6 hover:w-16 hover:-translate-y-1 hover:scale-90 hover:shadow-md hover:shadow-pfont  duration-300" src="./src/icon/twitter.svg" alt="p_icon">
+          </a>
+        </div>
+      </div>
+    </div>
+
+  <!-- details section end -->
+    <div class="text-pfont flex justify-between px-8 py-4 border-t-2 border-pfont text-sm">
+      <div>
+        <h3>Copyright&copy;All Rights Reserved by <a href="#" class="link link-hover">BMPEA</a></h3>
+      </div>
+      <div>
+        <h3>Developed by:  <a href="www.codecursor.com" class="hover:text-pred hover:font-medium hover:-translate-y-1 hover:scale-90 duration-300 ">Code Cursor</a></h3>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
