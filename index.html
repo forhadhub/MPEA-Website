@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <!-- google font: tiro bangla -->
+    <link rel="stylesheet" href="tailwind.config.js">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
@@ -75,7 +76,32 @@
       border: 1px solid #0c0306;
       box-shadow: -webkit-box-shadow: 0px 0px 25px 0px rgba(239,0,0,0.95); -moz-box-shadow: 0px 0px 25px 0px rgba(239,0,0,0.95); box-shadow: 0px 0px 25px 0px rgba(239,0,0,0.95);
     }
-
+/* committee section */
+section#carousel {
+      --items: 5;
+      --middle: 3;
+      --position: 3; /* Default to the 3rd position */
+      pointer-events: none;
+      transform-style: preserve-3d;
+      perspective: 600px;
+    }
+    div.item {
+      --r: calc(var(--position) - var(--offset));
+      --abs: max(calc(var(--r) * -1), var(--r));
+      transition: all 0.25s linear;
+      transform: rotateY(calc(-10deg * var(--r))) translateX(calc(-300px * var(--r)));
+      z-index: calc((var(--position) - var(--abs)));
+    }
+    div.item:nth-of-type(1) { --offset: 1; }
+    div.item:nth-of-type(2) { --offset: 2; }
+    div.item:nth-of-type(3) { --offset: 3; }
+    div.item:nth-of-type(4) { --offset: 4; }
+    div.item:nth-of-type(5) { --offset: 5; }
+    input:nth-of-type(1):checked ~ section#carousel { --position: 1; }
+    input:nth-of-type(2):checked ~ section#carousel { --position: 2; }
+    input:nth-of-type(3):checked ~ section#carousel { --position: 3; }
+    input:nth-of-type(4):checked ~ section#carousel { --position: 4; }
+    input:nth-of-type(5):checked ~ section#carousel { --position: 5; }
     </style>
 </head>
 
@@ -147,6 +173,7 @@
   </header>
 
   <main>
+    <!-- https://css-tricks.com/css-only-carousel/ -->
     <!-- banner section start -->
     <div class="mt-8 carousel w-cover">
       <div id="slide1" class="carousel-item relative w-full h-2/3">
@@ -173,9 +200,9 @@
     </div>
     <!-- banner section end -->
     <!-- press release and event section start -->
-    <div class="px-8 flex flex-col flex-col-reverse lg:flex lg:flex-row lg:gap-32 items-center">
+    <div class="px-8 flex flex-col flex-col-reverse lg:flex lg:flex-row lg:gap-32 items-center mt-20">
       <!-- press release section start -->
-      <div class="carousel w-full mt-10 lg:mb-0 lg:w-3/5 relative overflow-hidden ">
+      <div class="carousel w-full lg:mb-0 lg:w-3/5 relative overflow-hidden ">
         <!-- slide 1 -->
         <div id="slide1" class="carousel-item relative w-full">
           <div class="card w-full" style="background-color: rgba(214, 210, 199, 0.6);">
@@ -248,7 +275,7 @@
       <!-- press release section end -->
       
       <!-- event section start -->
-      <div class="carousel w-full lg:w-2/5 relative overflow-hidden border-2 border-pfont">
+      <div class="carousel w-full mb-20 lg:mb-0 lg:w-2/5 relative overflow-hidden border-2 border-pfont">
         <!-- slide 1 -->
         <div id="slide4" class="carousel-item relative w-full text-center">
           <div class="card w-full rounded-md pt-8" style="background-color: rgba(12, 3, 6, 0.5);">
@@ -339,9 +366,123 @@
     <!-- press release and event section end -->
 
 
+
+    <!-- committee section -->
+    <h1 class=" mt-20 mb-10 text-xl text-center font-light text-pfont underline underline-offset-4 hover:text-pyellow"><a href="committeelist.html">Committee</a></h1>
+    <div class="m-0 grid grid-rows-[400px_50px_50px] grid-cols-[1fr_30px_30px_30px_30px_30px_1fr] place-items-center">
+      <!-- <input type="radio" name="position" class="col-start-2 row-start-3"> -->
+      <!-- <input type="radio" name="position" class="col-start-3 row-start-3"> -->
+      <!-- <input type="radio" name="position" checked class="col-start-4 row-start-3"> Default to 3rd position -->
+      <!-- <input type="radio" name="position" class="col-start-5 row-start-3"> -->
+      <!-- <input type="radio" name="position" class="col-start-6 row-start-3"> -->
+      
+      <!-- Card section -->
+      <section id="carousel" class="col-start-1 col-end-8 w-full h-[500px] flex items-center justify-center overflow-hidden relative">
+        <!-- Card 1 -->
+        <div class="item absolute w-[300px] h-[400px] border-2 border-pfont p-3 rounded-3xl flex flex-col justify-center items-center">
+          <img src="./src/images/1. Kazi Shoaib Rashid-President.jpg" class="w-full h-full object-cover rounded-tl-lg rounded-tr-lg">
+          <div class="absolute bottom-0 w-4/5 text-pfont bg-black bg-pred bg-opacity-50 rounded-3xl text-center mb-3 border-2 border-pfont">
+            <h3 class="text-lg font-bold">Kazi Shoaib Rashid</h3>
+            <p class="text-sm">President</p>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="item absolute w-[300px] h-[400px] border-2 border-pfont p-3 rounded-3xl flex flex-col justify-center items-center">
+          <img src="./src/images/2. Mia Alauddin.jpg" class="w-full h-full object-cover rounded-tl-lg rounded-tr-lg">
+          <div class="absolute bottom-0 w-4/5 text-pfont bg-black bg-pred bg-opacity-50 rounded-3xl text-center mb-3 border-2 border-pfont">
+            <h3 class="text-lg font-bold">Mia Alauddin</h3>
+            <p class="text-sm">Vice President</p>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="item absolute w-[300px] h-[400px] border-2 border-pfont p-3 rounded-3xl flex flex-col justify-center items-center">
+          <img src="./src/images/3. Amir Hamja.jpg" class="w-full h-full object-cover rounded-tl-lg rounded-tr-lg">
+          <div class="absolute bottom-0 w-4/5 text-pfont bg-black bg-pred bg-opacity-50 rounded-3xl text-center mb-3 border-2 border-pfont">
+            <h3 class="text-lg font-bold">Amir Hamza</h3>
+            <p class="text-sm">Vice President</p>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="item absolute w-[300px] h-[400px] border-2 border-pfont p-3 rounded-3xl flex flex-col justify-center items-center">
+          <img src="./src/images/4. Awlad Hossain Ujjal.jpg" class="w-full h-full object-cover rounded-tl-lg rounded-tr-lg ">
+          <div class="absolute bottom-0 w-4/5 text-pfont bg-black bg-pred bg-opacity-50 rounded-3xl text-center mb-3 border-2 border-pfont">
+            <h3 class="text-lg font-bold">Awlad Hossain</h3>
+            <p class="text-sm">General Secretary</p>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="item absolute w-[300px] h-[400px] border-2 border-pfont p-3 rounded-3xl flex flex-col justify-center items-center">
+          <img src="./src/images/5.-Shorfuddin-Elahi-Somrat.jpg" class="w-full h-full object-cover rounded-tl-lg rounded-tr-lg ">
+          <div class="absolute bottom-0 w-4/5 text-pfont bg-black bg-pred bg-opacity-50 rounded-3xl text-center mb-3 border-2 border-pfont">
+            <h3 class="text-lg font-bold">Shorfuddin Elahi Somrat</h3>
+            <p class="text-sm">Organizing Secretary</p>
+          </div>
+        </div>
+      </section>
+      <div class="col-start-1 col-end-8 row-start-2 flex justify-center">
+        <a href="committeelist.html"><button class="p-button">Click to more</button></a>
+      </div>
+    </div>
+
+    <!-- media section -->
+    <h1 class="mb-10 text-xl text-center font-light text-pfont underline underline-offset-4 hover:text-pyellow"><a href="media.html">Photos & Videos</a></h1>
+    <div class="w-full grid grid-cols-1 lg:grid-cols-4 gap-4 px-8 items-center">
+      <div class="flex flex-col items-center">
+        <img src="./src/images/p-1.jpg" alt="" class="mb-4 w-full object-cover">
+        <img src="./src/images/p-3.jpg" alt="" class="mb-4 w-full object-cover">
+        <div>
+          <a href="committeelist.html"><button class="p-button">Click to more</button></a>
+        </div>
+      </div>
+  
+      <div class="flex flex-col items-center col-span-2">
+        <div class="carousel w-full border-4 border-pfont">
+          <div id="slideV1" class="carousel-item relative w-full justify-center">
+            <iframe width="100%" frameborder="0" src="https://www.youtube.com/embed/3sPpJ3-X2HE?si=IP2xqy881j-gMqVg"></iframe>
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slideV4" class="btn btn-circle">❮</a> 
+              <a href="#slideV2" class="btn btn-circle">❯</a>
+            </div>
+          </div> 
+          <div id="slideV2" class="carousel-item relative w-full justify-center">
+            <iframe width="854" height="480" src="https://www.youtube.com/embed/uR4Kti3UJcU?si=at909QW2KjkH_4oi"></iframe>
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slideV1" class="btn btn-circle">❮</a> 
+              <a href="#slideV3" class="btn btn-circle">❯</a>
+            </div>
+          </div> 
+          <div id="slideV3" class="carousel-item relative w-full justify-center">
+            <iframe width="854" height="480"  src="https://www.youtube.com/embed/MVqa-b5j3gs?si=q1vqV869etLvItriY"></iframe>
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slideV2" class="btn btn-circle">❮</a> 
+              <a href="#slideV4" class="btn btn-circle">❯</a>
+            </div>
+          </div> 
+          <div id="slideV4" class="carousel-item relative w-full justify-center">
+            <iframe width="854" height="480" src="https://www.youtube.com/embed/3sPpJ3-X2HE?si=IP2xqy881j-gMqVg"></iframe>
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slideV3" class="btn btn-circle">❮</a> 
+              <a href="#slideV1" class="btn btn-circle">❯</a>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4">
+          <a href="committeelist.html"><button class="p-button">Click to more</button></a>
+        </div>
+      </div>
+  
+      <div class="flex flex-col items-center">
+        <img src="./src/images/p-2.jpg" alt="" class="mb-4 w-full object-cover">
+        <img src="./src/images/p-4.jpg" alt="" class="mb-4 w-full object-cover">
+        <div>
+          <a href="committeelist.html"><button class="p-button">Click to more</button></a>
+        </div>
+      </div>
+    </div>
+
   </main>
 
-  <footer class="border-t-4 border-pfont mt-10 bg-gradient-to-r from-pblack via-pred to-pblack opacity-80">
+  <footer class="border-t-4 border-pfont mt-20 bg-gradient-to-r from-pblack via-pred to-pblack opacity-80">
   <!-- footer section start -->
     <div class="grid grid-cols-1 lg:grid-cols-4 px-8 py-5 text-pfont font-medium justify-between items-center">
       <!-- site logo -->
@@ -385,5 +526,22 @@
       </div>
     </div>
   </footer>
+
+
+  <!-- javascript supported design -->
+  <!-- committee section -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let position = 3; // Starting position
+      const totalItems = 5;
+      const intervalTime = 2000; // 2 seconds
+
+      setInterval(() => {
+        position = (position % totalItems) + 1;
+        document.querySelector(`#carousel`).style.setProperty('--position', position);
+        document.querySelectorAll(`input[name="position"]`)[position - 1].checked = true;
+      }, intervalTime);
+    });
+  </script>
 </body>
 </html>

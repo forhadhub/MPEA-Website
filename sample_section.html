@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto-Rotating Carousel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    section#carousel {
+      --items: 5;
+      --middle: 3;
+      --position: 3; /* Default to the 3rd position */
+      pointer-events: none;
+      transform-style: preserve-3d;
+      perspective: 600px;
+    }
+    div.item {
+      --r: calc(var(--position) - var(--offset));
+      --abs: max(calc(var(--r) * -1), var(--r));
+      transition: all 0.25s linear;
+      transform: rotateY(calc(-10deg * var(--r))) translateX(calc(-300px * var(--r)));
+      z-index: calc((var(--position) - var(--abs)));
+    }
+    div.item:nth-of-type(1) { --offset: 1; }
+    div.item:nth-of-type(2) { --offset: 2; }
+    div.item:nth-of-type(3) { --offset: 3; }
+    div.item:nth-of-type(4) { --offset: 4; }
+    div.item:nth-of-type(5) { --offset: 5; }
+    input:nth-of-type(1):checked ~ section#carousel { --position: 1; }
+    input:nth-of-type(2):checked ~ section#carousel { --position: 2; }
+    input:nth-of-type(3):checked ~ section#carousel { --position: 3; }
+    input:nth-of-type(4):checked ~ section#carousel { --position: 4; }
+    input:nth-of-type(5):checked ~ section#carousel { --position: 5; }
+  </style>
+</head>
+<body>
+  <div class="h-[600px] m-0 grid grid-rows-[500px_50px_50px] grid-cols-[1fr_30px_30px_30px_30px_30px_1fr] place-items-center">
+    <input type="radio" name="position" class="col-start-2 row-start-3">
+    <input type="radio" name="position" class="col-start-3 row-start-3">
+    <input type="radio" name="position" checked class="col-start-4 row-start-3"> <!-- Default to 3rd position -->
+    <input type="radio" name="position" class="col-start-5 row-start-3">
+    <input type="radio" name="position" class="col-start-6 row-start-3">
+    <section id="carousel" class="col-start-1 col-end-8 w-full h-[500px] flex items-center justify-center overflow-hidden relative">
+      <div class="item absolute w-[300px] h-[400px]">
+        <img src="https://via.placeholder.com/300x400" class="w-full h-full object-cover">
+        <div class="absolute bottom-0 w-full bg-black bg-opacity-75 text-white p-4">
+          <h3 class="text-lg font-bold">John Doe</h3>
+          <p class="text-sm">Designer</p>
+        </div>
+      </div>
+      <div class="item absolute w-[300px] h-[400px]">
+        <img src="https://via.placeholder.com/300x400" class="w-full h-full object-cover">
+        <div class="absolute bottom-0 w-full bg-black bg-opacity-75 text-white p-4">
+          <h3 class="text-lg font-bold">Jane Smith</h3>
+          <p class="text-sm">Developer</p>
+        </div>
+      </div>
+      <div class="item absolute w-[300px] h-[400px]">
+        <img src="https://via.placeholder.com/300x400" class="w-full h-full object-cover">
+        <div class="absolute bottom-0 w-full bg-black bg-opacity-75 text-white p-4">
+          <h3 class="text-lg font-bold">Alice Johnson</h3>
+          <p class="text-sm">Manager</p>
+        </div>
+      </div>
+      <div class="item absolute w-[300px] h-[400px]">
+        <img src="https://via.placeholder.com/300x400" class="w-full h-full object-cover">
+        <div class="absolute bottom-0 w-full bg-black bg-opacity-75 text-white p-4">
+          <h3 class="text-lg font-bold">Michael Brown</h3>
+          <p class="text-sm">Engineer</p>
+        </div>
+      </div>
+      <div class="item absolute w-[300px] h-[400px]">
+        <img src="https://via.placeholder.com/300x400" class="w-full h-full object-cover">
+        <div class="absolute bottom-0 w-full bg-black bg-opacity-75 text-white p-4">
+          <h3 class="text-lg font-bold">Emily Davis</h3>
+          <p class="text-sm">Artist</p>
+        </div>
+      </div>
+    </section>
+    <div class="col-start-1 col-end-8 row-start-2 flex justify-center">
+      <button class="bg-black text-white px-4 py-2">Click to more</button>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let position = 3; // Start from the 3rd position
+      const totalItems = 5;
+      const intervalTime = 2000; // 2 seconds
+
+      setInterval(() => {
+        position = (position % totalItems) + 1;
+        document.querySelector(`#carousel`).style.setProperty('--position', position);
+        document.querySelectorAll(`input[name="position"]`)[position - 1].checked = true;
+      }, intervalTime);
+    });
+  </script>
+</body>
+</html>
